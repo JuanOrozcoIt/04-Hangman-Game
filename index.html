@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Ahorcado</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- My custom stylesheet -->
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<div id="main">
+		<div id="work-space">
+			<div>
+				<h1>Welcome to Hangman!</h1>
+				<h2>Press a letter to start guessing</h2>
+			</div>
+			<div id="total-score-box" class="stats">
+				<hr>
+				<h3>You've won <span id="total-score">0</span> games so far!</h3>
+			</div>
+			<div id="guesses-remaining-box" class="stats">
+				<hr>
+				<h3>You have <span id="guesses-remaining">6</span> incorrect guesses left before you lose.</h3>
+			</div>
+			<div id="playboard">
+				<img src="assets/images/hm0.png">
+			</div>
+			<div id="word"></div>
+			<hr>
+			<div id="bad-guess-box" class="stats">
+				<h3 id="bad-guess-counter"></h3>
+			</div>
+			<div id="wrong-letter-box" class="stats">
+				<p class="wrong-letter" id="wrong-letter1">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter2">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter3">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter4">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter5">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter6">&nbsp</p>
+			</div>
+			<div id="button" class="btn btn-default" onclick="reset()">Try Again</div>
+		</div>
+	</div>
+	<div id="preload">
+		<img src="assets/images/hm0.png">
+		<img src="assets/images/hm1.png">
+		<img src="assets/images/hm2.png">
+		<img src="assets/images/hm3.png">
+		<img src="assets/images/hm4.png">
+		<img src="assets/images/hm5.png">
+		<img src="assets/images/hm6.png">
+	</div>
+</body>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</html>
