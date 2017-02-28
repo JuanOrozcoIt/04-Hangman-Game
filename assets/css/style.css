@@ -8,8 +8,8 @@ html, body
 
 h1, h2, h3, p
 {
-	font-family: 'Annie Use Your Telescope','Coming Soon', sans-serif;
-	color: #535456;
+	font: 20px/20px Georgia, sans-serif;
+	color: #000608;
 }
 
 hr
