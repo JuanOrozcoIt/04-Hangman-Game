@@ -1,21 +1,21 @@
 var guesses = 0;
 var wrong_guesses = [];
-var good_guesses = [];
+var right_guesses = [];
 var listen = true;
 var total_score = 0;
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var words = ["cristiano ronaldo", "lionel messi", "neymar da silva", "manuel neuer", "arjen robben","thomas mueller", "luis suarez", "philipp lahm", "zlatan ibrahimovic", "andres iniesta", "angel di maría";
+var words = ["lionel messi", "cristiano ronaldo", "manuel neuer", "arjen robben", "thomas mueller", "luis suarez", "philipp lahm", "zlatan ibrahimovic", "andres iniesta", "angel di maria"];
 var word = words[Math.floor((Math.random() * words.length))];
 var letters = [];
-var quantity_of_spaces = 0;
+var spaces_quantity = 0;
 
-// Start each game.
-function gameSetup(word) {
+
+function wordSetup(word) {
 	var string = "";
 	for (var i = 0; i < word.length; i++) {
 		if (word.charAt(i) === " ") {
 			string += '<p class="letter no-underscore" id="letter' + i + '">&nbsp</p>'
-			quantity_of_spaces++;
+			spaces_quantity++;
 		} else {
 			string += '<p class="letter" id="letter' + i + '">&nbsp</p>';
 		}
@@ -35,22 +35,22 @@ function reset() {
 	listen = true;
 	guesses = 0;
 	wrong_guesses = [];
-	good_guesses = [];
+	right_guesses = [];
 	listen = true;
-	quantity_of_spaces = 0;
-	document.getElementById("left-guesses-box").innerHTML = "<hr><h3>You have <span id=\"left-guesses\">5</span> incorrect guesses left before you lose.</h3>";
-	document.getElementById("left-guesses-box").style.height = "";
-	document.getElementById("bad-guess-counter").innerHTML = "";
-	document.getElementById("left-guesses").innerHTML = " " + 5 + " ";
+	spaces_quantity = 0;
+	document.getElementById("guesses-left-box").innerHTML = "<hr><h3>You have <span id=\"guesses-left\">6</span> incorrect guesses left before you lose.</h3>";
+	document.getElementById("guesses-left-box").style.height = "";
+	document.getElementById("wrong-guess-counter").innerHTML = "";
+	document.getElementById("guesses-left").innerHTML = " " + 6 + " ";
 	document.getElementById("playboard").innerHTML = '<img src="assets/images/hm0.png">';
 	document.getElementById("playboard").style.marginTop = "180px";
 	document.getElementById("playboard").style.height = "";
 	document.getElementById("word").innerHTML = "";
 	var word = words[Math.floor((Math.random() * words.length))];
-	gameSetup(word)
+	wordSetup(word)
 }
 
-// Functions.
+
 document.onkeyup = function(event) {
 
 	function alreadyGuessed(userGuess) {
@@ -60,8 +60,8 @@ document.onkeyup = function(event) {
 			}
 		}
 
-		for (var i = 0; i < good_guesses.length; i++) {
-			if (userGuess === good_guesses[i]) {
+		for (var i = 0; i < right_guesses.length; i++) {
+			if (userGuess === right_guesses[i]) {
 				return true;
 			}
 		}
@@ -83,7 +83,7 @@ document.onkeyup = function(event) {
 			return;
 		} else if (alreadyGuessed(userGuess)) {
 			alert("You've already guessed \"" + userGuess.toUpperCase() + 
-				"\"...!");
+				"\". Try another letter.");
 			return;
 		} else {
 			guesses++
@@ -91,18 +91,17 @@ document.onkeyup = function(event) {
 			for (var i = 0; i < letters.length; i++) {
 				if (userGuess === letters[i]) {
 					document.getElementById("letter" + i).innerHTML = userGuess;
-					good_guesses.push(userGuess);
+					right_guesses.push(userGuess);
 					match = true;
 				}
-				if (good_guesses.length === (letters.length - quantity_of_spaces)) {
+				if (right_guesses.length === (letters.length - spaces_quantity)) {
 					listen = false;
 					total_score++;
-					document.getElementById("left-guesses-box").innerHTML = "";
-					document.getElementById("left-guesses-box").style.height = "0px";
+					document.getElementById("guesses-left-box").innerHTML = "";
+					document.getElementById("guesses-left-box").style.height = "0px";
 					document.getElementById("playboard").style.height = "320px";
 					document.getElementById("playboard").style.marginTop = "120px";
-					document.getElementById("playboard").innerHTML = '<iframe width="732" height="446" src="https://www.youtube.com/embed/82wM8s-_2RM" frameborder="0" allowfullscreen></iframe>'
-
+					document.getElementById("playboard").innerHTML = '<iframe width="560" height="315" src="<iframe width="854" height="480" src="https://www.youtube.com/embed/HdA5vcke8tA" frameborder="0" allowfullscreen></iframe>'
 					document.getElementById("total-score").innerHTML = total_score;
 					break;
 				}
@@ -111,14 +110,14 @@ document.onkeyup = function(event) {
 				wrong_guesses.push(userGuess);
 				document.getElementById("wrong-letter" + wrong_guesses.length).innerHTML = userGuess;
 				if (wrong_guesses.length > 1) {
-					document.getElementById("bad-guess-counter").innerHTML = "Your " + wrong_guesses.length + " bad guesses so far are: ";
+					document.getElementById("wrong-guess-counter").innerHTML = "Your " + wrong_guesses.length + " wrong guesses so far are: ";
 				} else {
-					document.getElementById("bad-guess-counter").innerHTML = "Your first bad guess was:";
+					document.getElementById("wrong-guess-counter").innerHTML = "Your first wrong guess was:";
 				}
 			
-				document.getElementById("left-guesses").innerHTML = " " + 5 - wrong_guesses.length + " ";
+				document.getElementById("guesses-left").innerHTML = " " + 6 - wrong_guesses.length + " ";
 				document.getElementById("playboard").innerHTML = '<img src="assets/images/hm' + wrong_guesses.length + '.png">'
-				if (wrong_guesses.length === 5) {
+				if (wrong_guesses.length === 6) {
 					listen = false;
 				}
 			}
@@ -130,5 +129,4 @@ document.onkeyup = function(event) {
 	};
 }
 
-//Start the game.
-gameSetup(word);
+wordSetup(word);

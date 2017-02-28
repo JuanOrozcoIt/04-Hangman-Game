@@ -2,37 +2,41 @@
 <html lang="en-us">
 <head>
 	<meta charset="UTF-8">
-	<title>Ahorcado</title>
+	<title>AHORCADO</title>
 
 	<!-- Latest CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Opt. theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+
+	<!-- Stylesheet -->
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<div id="main">
 		<div id="work-space">
 			<div>
-				<h1>Welcome to Hangman!</h1>
-				<h2>Press a letter to start guessing</h2>
+				<h1>AHORCADO</h1>
+				<h2>Who are the top soccer stars? Take a guess...</h2>
 			</div>
 			<div id="total-score-box" class="stats">
 				<hr>
-				<h3>You've won <span id="total-score">0</span> games so far!</h3>
+				<h3>You won <span id="total-score">0</span> games!</h3>
 			</div>
-			<div id="left-guesses-box" class="stats">
+			<div id="guesses-left-box" class="stats">
 				<hr>
-				<h3>You have <span id="left-guesses">5</span> incorrect guesses left before you lose.</h3>
+				<h3>You have <span id="guesses-left">6</span> wrong guesses left before losing the game.</h3>
 			</div>
 			<div id="playboard">
 				<img src="assets/images/hm0.png">
 			</div>
 			<div id="word"></div>
 			<hr>
-			<div id="bad-guess-box" class="stats">
-				<h3 id="bad-guess-counter"></h3>
+			<div id="wrong-guess-box" class="stats">
+				<h3 id="wrong-guess-counter"></h3>
 			</div>
 			<div id="wrong-letter-box" class="stats">
 				<p class="wrong-letter" id="wrong-letter1">&nbsp</p>

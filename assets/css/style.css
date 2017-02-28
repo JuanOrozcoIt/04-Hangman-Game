@@ -5,7 +5,7 @@ html, body
 
 h1, h2, h3, p
 {
-	font-family:'Allerta Stencil'; font-size: 22px;
+	font-family: 'Annie Use Your Telescope','Coming Soon', sans-serif;
 	color: #535456;
 }
 
@@ -13,7 +13,7 @@ hr
 {
 	width: 50%;
 	float: center;
-	border-top: 3px double #535456;
+	border-top: 4px double #535456;
 }
 
 .letter 
@@ -21,7 +21,7 @@ hr
 	float: left;
 	text-decoration: underline;
 	text-transform: uppercase;
-	font-weight: 500;
+	font-weight: 700;
 	font-size: 30px;
 	margin: 0 10px;
 }
@@ -60,11 +60,11 @@ hr
 	margin: 0px auto;
 }
 
-#work-space
+#writeable-space
 {
 	float: left;
-	width: 80%;
-	margin-top: 12%;
+	width: 79.5%;
+	margin-top: 13%;
 	margin-left: 20%;
 	text-align: center;
 }
