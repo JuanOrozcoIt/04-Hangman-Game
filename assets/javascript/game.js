@@ -101,7 +101,7 @@ document.onkeyup = function(event) {
 					document.getElementById("guesses-left-box").style.height = "0px";
 					document.getElementById("playboard").style.height = "320px";
 					document.getElementById("playboard").style.marginTop = "120px";
-					document.getElementById("playboard").innerHTML = '<iframe width="560" height="315" src="<iframe width="854" height="480" src="https://www.youtube.com/embed/HdA5vcke8tA" frameborder="0" allowfullscreen></iframe>'
+					document.getElementById("playboard").innerHTML = '<iframe width="680" height="320" src="https://www.youtube.com/embed/HdA5vcke8tA?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'															
 					document.getElementById("total-score").innerHTML = total_score;
 					break;
 				}
